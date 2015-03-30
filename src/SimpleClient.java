@@ -77,6 +77,15 @@ public class SimpleClient {
 						col = 0;
 						Turn=false;
 						count++;
+						wins=won();
+						if(wins==1)
+						{JOptionPane.showMessageDialog(null,
+								"Congrats client side...... crosses 'x' wins");}
+						else if(count==9&&wins==3)
+
+						{
+							JOptionPane.showMessageDialog(null,"game is draw");	
+						}
 						sendMessage();
 
 					}
@@ -101,6 +110,15 @@ public class SimpleClient {
 							col = 1;
 							Turn=false;
 							count++;
+							wins=won();
+							if(wins==1)
+							{JOptionPane.showMessageDialog(null,
+									"Congrats client side...... crosses 'x' wins");}
+							else if(count==9&&wins==3)
+
+							{
+								JOptionPane.showMessageDialog(null,"game is draw");	
+							}
 							sendMessage();
 						}
 					}
@@ -121,6 +139,15 @@ public class SimpleClient {
 							row = 0;
 							col = 2;
 							Turn=false;
+							wins=won();
+							if(wins==1)
+							{JOptionPane.showMessageDialog(null,
+									"Congrats client side...... crosses 'x' wins");}
+							else if(count==9&&wins==3)
+
+							{
+								JOptionPane.showMessageDialog(null,"game is draw");	
+							}
 							sendMessage();
 
 						}
@@ -142,6 +169,15 @@ public class SimpleClient {
 							col = 0;
 							Turn=false;
 							count++;
+							wins=won();
+							if(wins==1)
+							{JOptionPane.showMessageDialog(null,
+									"Congrats client side...... crosses 'x' wins");}
+							else if(count==9&&wins==3)
+
+							{
+								JOptionPane.showMessageDialog(null,"game is draw");	
+							}
 							sendMessage();
 						}
 					}
@@ -162,6 +198,15 @@ public class SimpleClient {
 							col = 1;
 							Turn=false;
 							count++;
+							wins=won();
+							if(wins==1)
+							{JOptionPane.showMessageDialog(null,
+									"Congrats client side...... crosses 'x' wins");}
+							else if(count==9&&wins==3)
+
+							{
+								JOptionPane.showMessageDialog(null,"game is draw");	
+							}
 							sendMessage();
 						}
 					}
@@ -182,6 +227,15 @@ public class SimpleClient {
 							col = 2;
 							Turn=false;
 							count++;
+							wins=won();
+							if(wins==1)
+							{JOptionPane.showMessageDialog(null,
+									"Congrats client side...... crosses 'x' wins");}
+							else if(count==9&&wins==3)
+
+							{
+								JOptionPane.showMessageDialog(null,"game is draw");	
+							}
 							sendMessage();
 						}
 					}
@@ -203,6 +257,15 @@ public class SimpleClient {
 							col = 0;
 							Turn=false;
 							count++;
+							wins=won();
+							if(wins==1)
+							{JOptionPane.showMessageDialog(null,
+									"Congrats client side...... crosses 'x' wins");}
+							else if(count==9&&wins==3)
+
+							{
+								JOptionPane.showMessageDialog(null,"game is draw");	
+							}
 							sendMessage();
 						}
 					}
@@ -224,6 +287,15 @@ public class SimpleClient {
 							col = 1;
 							Turn=false;
 							count++;
+							wins=won();
+							if(wins==1)
+							{JOptionPane.showMessageDialog(null,
+									"Congrats client side...... crosses 'x' wins");}
+							else if(count==9&&wins==3)
+
+							{
+								JOptionPane.showMessageDialog(null,"game is draw");	
+							}
 							sendMessage();
 						}
 					}
@@ -245,6 +317,15 @@ public class SimpleClient {
 							col = 2;
 							Turn=false;
 							count++;
+							wins=won();
+							if(wins==1)
+							{JOptionPane.showMessageDialog(null,
+									"Congrats client side...... crosses 'x' wins");}
+							else if(count==9&&wins==3)
+
+							{
+								JOptionPane.showMessageDialog(null,"game is draw");	
+							}
 							sendMessage();
 						}
 					}
@@ -274,8 +355,6 @@ public class SimpleClient {
 				) {
 			winner = 1;
 
-			JOptionPane.showMessageDialog(null,
-					"Congrats client side..... crosses 'x' wins");
 		}
 		if (
 
@@ -296,12 +375,11 @@ public class SimpleClient {
 
 				) {
 			winner = 0;
-			JOptionPane.showMessageDialog(null,
-					"Congrats server side...... zeros '0' wins");
+			
 		}
 		if(count==9&&winner==3)
 		{
-			JOptionPane.showMessageDialog(null,"Game is draw");
+			//JOptionPane.showMessageDialog(null,"Game is draw");
 		}
 		return winner;
 	}
@@ -335,6 +413,17 @@ public class SimpleClient {
 					ObjectInputStream(clientsocket.getInputStream());
 			Player1= (Player)clientInputStream.readObject();
 			setButtonText(Player1.getRow(),Player1.getCol());
+			count++;
+			wins=won();
+			if(wins==0)
+			{JOptionPane.showMessageDialog(null,
+					"Congrats server side...... zeros '0' wins");}
+		
+		else if(count==9&&wins==3)
+
+		{
+			JOptionPane.showMessageDialog(null,"game is draw");	
+		}
 			Turn=true;
 			//loop here over clientInputStream and read line every time
 			// for example "response = in.readLine();" every time in loop

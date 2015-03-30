@@ -77,6 +77,15 @@ public class SimpleServer {
 						col = 0;
 						Turn=false;
 						count++;
+						wins=won();
+						if(wins==0)
+						{JOptionPane.showMessageDialog(null,
+								"Congrats server side...... zeros '0' wins");}
+						else if(count==9&&wins==3)
+
+						{
+							JOptionPane.showMessageDialog(null,"game is draw");	
+						}
 						sendMessage();
 
 					}
@@ -101,6 +110,15 @@ public class SimpleServer {
 							col = 1;
 							Turn=false;
 							count++;
+							wins=won();
+							if(wins==0)
+							{JOptionPane.showMessageDialog(null,
+									"Congrats server side...... zeros '0' wins");}
+							else if(count==9&&wins==3)
+
+							{
+								JOptionPane.showMessageDialog(null,"game is draw");	
+							}
 							sendMessage();
 						}
 					}
@@ -121,6 +139,15 @@ public class SimpleServer {
 							col = 2;
 							Turn=false;
 							count++;
+							wins=won();
+							if(wins==0)
+							{JOptionPane.showMessageDialog(null,
+									"Congrats server side...... zeros '0' wins");}
+							else if(count==9&&wins==3)
+
+							{
+								JOptionPane.showMessageDialog(null,"game is draw");	
+							}
 							sendMessage();
 						}
 					}
@@ -141,6 +168,15 @@ public class SimpleServer {
 							col = 0;
 							Turn=false;
 							count++;
+							wins=won();
+							if(wins==0)
+							{JOptionPane.showMessageDialog(null,
+									"Congrats server side...... zeros '0' wins");}
+							else if(count==9&&wins==3)
+
+							{
+								JOptionPane.showMessageDialog(null,"game is draw");	
+							}
 							sendMessage();
 						}
 					}
@@ -161,6 +197,15 @@ public class SimpleServer {
 							col = 1;
 							Turn=false;
 							count++;
+							wins=won();
+							if(wins==0)
+							{JOptionPane.showMessageDialog(null,
+									"Congrats server side...... zeros '0' wins");}
+							else if(count==9&&wins==3)
+
+							{
+								JOptionPane.showMessageDialog(null,"game is draw");	
+							}
 							sendMessage();
 						}
 					}
@@ -181,6 +226,15 @@ public class SimpleServer {
 							col = 2;
 							Turn=false;
 							count++;
+							wins=won();
+							if(wins==0)
+							{JOptionPane.showMessageDialog(null,
+									"Congrats client side...... crosses 'x' wins");}
+							else if(count==9&&wins==3)
+
+							{
+								JOptionPane.showMessageDialog(null,"game is draw");	
+							}
 							sendMessage();
 						}
 					}
@@ -202,6 +256,15 @@ public class SimpleServer {
 							col = 0;
 							Turn=false;
 							count++;
+							wins=won();
+							if(wins==0)
+							{JOptionPane.showMessageDialog(null,
+									"Congrats server side...... zeros '0' wins");}
+							else if(count==9&&wins==3)
+
+							{
+								JOptionPane.showMessageDialog(null,"game is draw");	
+							}
 							sendMessage();
 						}
 					}
@@ -223,6 +286,15 @@ public class SimpleServer {
 							col = 1;
 							Turn=false;
 							count++;
+							wins=won();
+							if(wins==0)
+							{JOptionPane.showMessageDialog(null,
+									"Congrats server side...... zeros '0' wins");}
+							else if(count==9&&wins==3)
+
+							{
+								JOptionPane.showMessageDialog(null,"game is draw");	
+							}
 							sendMessage();
 						}
 					}
@@ -244,6 +316,15 @@ public class SimpleServer {
 							col = 2;
 							Turn=false;
 							count++;
+							wins=won();
+							if(wins==0)
+							{JOptionPane.showMessageDialog(null,
+									"Congrats server side...... zeros '0' wins");}
+							else if(count==9&&wins==3)
+
+							{
+								JOptionPane.showMessageDialog(null,"game is draw");	
+							}
 							sendMessage();
 						}
 					}
@@ -273,8 +354,7 @@ public class SimpleServer {
 				) {
 			winner = 1;
 
-			JOptionPane.showMessageDialog(null,
-					"Congrats client side..... crosses 'x' wins");
+			
 		}
 		if (
 
@@ -295,12 +375,11 @@ public class SimpleServer {
 
 				) {
 			winner = 0;
-			JOptionPane.showMessageDialog(null,
-					"Congrats server side...... zeros '0' wins");
+			
 		}
 		if(count==9&&winner==3)
 		{
-			JOptionPane.showMessageDialog(null,"Game is draw");
+			//JOptionPane.showMessageDialog(null,"Game is draw");
 		}
 		return winner;
 	}
@@ -340,6 +419,16 @@ public class SimpleServer {
 					ObjectInputStream(serversocket.getInputStream());
 			Player2 = (Player )serverInputStream.readObject();
 			setButtonText(Player2.getRow(),Player2.getCol());
+			count++;
+			wins=won();
+			if(wins==1)
+			{JOptionPane.showMessageDialog(null,
+					"Congrats client side...... crosses 'x' wins");}
+			else if(count==9&&wins==3)
+
+			{
+				JOptionPane.showMessageDialog(null,"game is draw");	
+			}
 			Turn=true;
 			//serverInputStream.close();
 		} catch (IOException | ClassNotFoundException e) {
