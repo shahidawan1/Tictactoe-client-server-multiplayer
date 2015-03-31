@@ -42,59 +42,62 @@ public class SimpleClient {
 
 	}
 
-	JButton B1 = new JButton("");
-	JButton B2 = new JButton("");
-	JButton B3 = new JButton("");
-	JButton B4 = new JButton("");
-	JButton B5 = new JButton("");
-	JButton B6 = new JButton("");
-	JButton B7 = new JButton("");
-	JButton B8 = new JButton("");
-	JButton B9 = new JButton("");
+	JButton Button1 = new JButton("");
+	JButton Button2 = new JButton("");
+	JButton Button3 = new JButton("");
+	JButton Button4 = new JButton("");
+	JButton Button5 = new JButton("");
+	JButton Button6 = new JButton("");
+	JButton Button7 = new JButton("");
+	JButton Button8 = new JButton("");
+	JButton Button9 = new JButton("");
 
 	public void showbutton() {
 
-		mainFrame.add(B1);
-		mainFrame.add(B2);
-		mainFrame.add(B3);
-		mainFrame.add(B4);
-		mainFrame.add(B5);
-		mainFrame.add(B6);
-		mainFrame.add(B7);
-		mainFrame.add(B8);
-		mainFrame.add(B9);
+		mainFrame.add(Button1);
+		mainFrame.add(Button2);
+		mainFrame.add(Button3);
+		mainFrame.add(Button4);
+		mainFrame.add(Button5);
+		mainFrame.add(Button6);
+		mainFrame.add(Button7);
+		mainFrame.add(Button8);
+		mainFrame.add(Button9);
 		mainFrame.setVisible(true);
-		B1.addActionListener(new ActionListener() {
+		Button1.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 				wins = won();
 				if(Turn==true)
-				{		if (wins == 3 ) {
-					if (game[0][0] == '1') {
-						B1.setText("x");
-						game[0][0] = 'x';
-						row = 0;
-						col = 0;
-						Turn=false;
-						count++;
-						wins=won();
-						if(wins==1)
-						{JOptionPane.showMessageDialog(null,
-								"Congrats client side...... crosses 'x' wins");}
-						else if(count==9&&wins==3)
-
-						{
-							JOptionPane.showMessageDialog(null,"game is draw");	
+				{		
+					if (wins == 3 ) {
+					
+						if (game[0][0] == '1') {
+								
+							Button1.setText("x");
+							game[0][0] = 'x';
+							row = 0;
+							col = 0;
+							Turn=false;
+							count++;
+							wins=won();
+							if(wins==1)
+							{	
+								JOptionPane.showMessageDialog(null,
+								"Congrats client side...... crosses 'x' wins");
+							}
+							else if(count==9&&wins==3)
+							{
+								JOptionPane.showMessageDialog(null,"game is draw");	
+							}
+							sendMessage();
 						}
-						sendMessage();
-
 					}
-				}
 				}
 			}
 		});
 
-		B2.addActionListener(new ActionListener() {
+		Button2.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 				wins = won();
@@ -104,7 +107,7 @@ public class SimpleClient {
 
 						if (game[0][1] == '2') {
 
-							B2.setText("x");
+							Button2.setText("x");
 							game[0][1] = 'x';
 							row = 0;
 							col = 1;
@@ -125,7 +128,7 @@ public class SimpleClient {
 				}
 			}
 		});
-		B3.addActionListener(new ActionListener() {
+		Button3.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 				wins = won();
@@ -133,7 +136,7 @@ public class SimpleClient {
 				{	
 					if (wins == 3) {
 						if (game[0][2] == '3') {
-							B3.setText("x");
+							Button3.setText("x");
 							game[0][2] = 'x';
 							count++;
 							row = 0;
@@ -155,7 +158,7 @@ public class SimpleClient {
 				}
 			}
 		});
-		B4.addActionListener(new ActionListener() {
+		Button4.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 				wins = won();
@@ -163,7 +166,7 @@ public class SimpleClient {
 				{
 					if (wins == 3 ) {
 						if (game[1][0] == '4') {
-							B4.setText("x");
+							Button4.setText("x");
 							game[1][0] = 'x';
 							row = 1;
 							col = 0;
@@ -184,7 +187,7 @@ public class SimpleClient {
 				}
 			}
 		});
-		B5.addActionListener(new ActionListener() {
+		Button5.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 				wins = won();
@@ -192,7 +195,7 @@ public class SimpleClient {
 				{
 					if (wins == 3) {
 						if (game[1][1] == '5') {
-							B5.setText("x");
+							Button5.setText("x");
 							game[1][1] = 'x';
 							row = 1;
 							col = 1;
@@ -213,7 +216,7 @@ public class SimpleClient {
 				}
 			}
 		});
-		B6.addActionListener(new ActionListener() {
+		Button6.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 				wins = won();
@@ -221,7 +224,7 @@ public class SimpleClient {
 				{
 					if (wins == 3) {
 						if (game[1][2] == '6') {
-							B6.setText("x");
+							Button6.setText("x");
 							game[1][2] = 'x';
 							row = 1;
 							col = 2;
@@ -242,7 +245,7 @@ public class SimpleClient {
 				}
 			}
 		});
-		B7.addActionListener(new ActionListener() {
+		Button7.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 				wins = won();
@@ -251,7 +254,7 @@ public class SimpleClient {
 					if (wins == 3) {
 
 						if (game[2][0] == '7') {
-							B7.setText("x");
+							Button7.setText("x");
 							game[2][0] = 'x';
 							row = 2;
 							col = 0;
@@ -272,7 +275,7 @@ public class SimpleClient {
 				}
 			}
 		});
-		B8.addActionListener(new ActionListener() {
+		Button8.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 				wins = won();
@@ -281,7 +284,7 @@ public class SimpleClient {
 					if (wins == 3) {
 
 						if (game[2][1] == '8') {
-							B8.setText("x");
+							Button8.setText("x");
 							game[2][1] = 'x';
 							row = 2;
 							col = 1;
@@ -302,7 +305,7 @@ public class SimpleClient {
 				}
 			}
 		});
-		B9.addActionListener(new ActionListener() {
+		Button9.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 				wins = won();
@@ -311,7 +314,7 @@ public class SimpleClient {
 					if (wins == 3 ) {
 
 						if (game[2][2] == '9') {
-							B9.setText("x");
+							Button9.setText("x");
 							game[2][2] = 'x';
 							row = 2;
 							col = 2;
@@ -461,55 +464,55 @@ public class SimpleClient {
 
 			if(row==0&&col==0)
 			{	
-				B1.setText("0");
+				Button1.setText("0");
 				game[0][0]='0';
 			}
 			else
 				if(row==0&&col==1)
 				{
-					B2.setText("0");
+					Button2.setText("0");
 					game[0][1]='0';
 				}
 				else
 					if(row==0&&col==2)
 					{
-						B3.setText("0");
+						Button3.setText("0");
 						game[0][2]='0';
 					}
 					else
 						if(row==1&&col==0)
 						{
-							B4.setText("0");
+							Button4.setText("0");
 							game[1][0]='0';
 						}
 						else
 							if(row==1&&col==1)
 							{
-								B5.setText("0");
+								Button5.setText("0");
 								game[1][1]='0';
 							}
 							else
 								if(row==1&&col==2)
 								{
-									B6.setText("0");
+									Button6.setText("0");
 									game[1][2]='0';
 								}
 								else
 									if(row==2&&col==0)
 									{
-										B7.setText("0");
+										Button7.setText("0");
 										game[2][0]='0';
 									}
 									else
 										if(row==2&&col==1)
 										{
-											B8.setText("0");
+											Button8.setText("0");
 											game[2][1]='0';
 										}
 										else
 											if(row==2&&col==2)
 											{
-												B9.setText("0");
+												Button9.setText("0");
 												game[2][2]='0';
 											}
 		}
